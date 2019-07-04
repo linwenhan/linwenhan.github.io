@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="LWH">
 <meta property="og:description" content="今天使用”hexo d”部署文件时发生一个错误，错误信息如下:  fatal: protocol error: bad line length character: git@  调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-04T09:36:45.823Z">
+<meta property="og:updated_time" content="2019-07-04T09:44:56.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo deploy失败">
 <meta name="twitter:description" content="今天使用”hexo d”部署文件时发生一个错误，错误信息如下:  fatal: protocol error: bad line length character: git@  调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成">
@@ -94,14 +94,14 @@
 <p>调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts存放linux的公钥信息，用于安全防范，于是猜想是不是这里出了什么问题，想着反正死猪不怕开水烫，直接把known_hosts文件删除，再次使用”hexo d”成功了。看来问题真出现在这，到这里问题已经解决了，但是原因还是很扑朔迷离，为什么公钥会突然失效呢？</p>
 </blockquote>
 <blockquote>
-<p>一顿百度谷歌刀光剑影，详细了解了关于known_hosts的信息，</p>
+<p>一顿百度谷歌刀光剑影，准备详细了解了关于known_hosts的信息。</p>
 </blockquote>
 <hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/04/hexo-deploy失败/" data-id="cjxoh7a420002dopzdhik72w4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/04/hexo-deploy失败/" data-id="cjxohhsiq00002gpz7ewresxn" class="article-share-link">Share</a>
       
       
     </footer>
