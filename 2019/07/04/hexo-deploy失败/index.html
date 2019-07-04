@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo deploy失败 | LWH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天使用”hexo d”部署文件时发生一个错误 fatal: protocol error: bad line length character: git@ 调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo deploy失败">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/hexo-deploy失败/index.html">
+<meta property="og:site_name" content="LWH">
+<meta property="og:description" content="今天使用”hexo d”部署文件时发生一个错误 fatal: protocol error: bad line length character: git@ 调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-04T09:19:41.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo deploy失败">
+<meta name="twitter:description" content="今天使用”hexo d”部署文件时发生一个错误 fatal: protocol error: bad line length character: git@ 调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts">
+  
+    <link rel="alternate" href="/atom.xml" title="LWH" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LWH</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-deploy失败" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/04/hexo-deploy失败/" class="article-date">
+  <time datetime="2019-07-04T08:10:39.000Z" itemprop="datePublished">2019-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo deploy失败
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天使用”hexo d”部署文件时发生一个错误</p>
+<p><code>fatal: protocol error: bad line length character: git@</code></p>
+<p>调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts存放linux的公钥信息，用于安全防范，于是猜想是不是这里出了什么问题，想着反正死猪不怕开水烫，直接把known_hosts文件删除，再次使用”hexo d”成功了。看了问题真出现在这，到这里问题已经解决了，但是原因还是很扑朔迷离，为什么公钥会突然失效呢？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/04/hexo-deploy失败/" data-id="cjxogld3d0001yopz4txitkno" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/04/引言/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">引言</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/04/hexo-deploy失败/">hexo deploy失败</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/04/引言/">引言</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 林不凡<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
