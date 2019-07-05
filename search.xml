@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[服务器ssh端口修改后，hexo报错]]></title>
     <url>%2F2019%2F07%2F05%2F%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9%E5%90%8E%EF%BC%8Chexo%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[为了服务器安全，今天把ssh默认端口修改了下，结果引起hexo上传代码失败 1234567891011ssh: connect to host 207.148.102.63 port 22: Connection refusedfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19) at ChildProcess.emit (events.js:198:13) at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29) at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)]]></content>
+    <content type="text"><![CDATA[为了服务器安全，今天把ssh默认端口修改了下，结果引起hexo上传代码失败 1234567891011ssh: connect to host 207.148.102.63 port 22: Connection refusedfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19) at ChildProcess.emit (events.js:198:13) at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29) at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12) 原因是hexo d部署时默认端口是22，需要对配置文件进行修改。修改方法，将根目录下 _config.yml文件中的deploy里的repo属性的值修改为如下格式： 1234deploy: type: git repo: ssh://username@ip:port/path/to/remote/git branch: master 再次部署hexo d就可以了]]></content>
+      <categories>
+        <category>hexo使用</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[CentOs 修改SSH端口]]></title>
