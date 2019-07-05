@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo deploy失败]]></title>
     <url>%2F2019%2F07%2F04%2Fhexo-deploy%E5%A4%B1%E8%B4%A5%2F</url>
-    <content type="text"><![CDATA[今天使用”hexo d”部署文件时发生一个错误，错误信息如下: 123456789On branch masternothing to commit, working tree cleanfatal: protocol error: bad line length character: git@FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19) at ChildProcess.emit (events.js:198:13) at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29) at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12) 调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts存放linux的公钥信息，用于安全防范，于是猜想是不是这里出了什么问题，想着反正死猪不怕开水烫，直接把known_hosts文件删除，再次使用”hexo d”成功了。看来问题真出现在这，到这里问题已经解决了，但是原因还是很扑朔迷离，为什么公钥会突然失效呢？ 一顿百度谷歌刀光剑影，准备详细了解了关于known_hosts的信息。了解后发现known_hosts是很安全的，于是又从ssh的角度查看最大访问数之类的设置，一一试验了下，无法再现之前的错误了，既然再现不了就不能证明猜想是否正确。于是开始回忆之前如何出问题，最后发现我敲命令是基于git bash的，但我有的git bash是直接打开的有的是通过Git Extensions软件内置的连接打开的，然道有区别，试了一下。。。真的再现了，Git Extensions上打开的git bash会出现上述错误 调查过程中遇到的一些有用的资料: linux ssh配置文件修复详解 SSH下know_hosts的作用 ssh最大连接数、ssh连接时长、安全性配置等非常感谢作者的分享，如果侵权请联系:linwenhan4566@163.com]]></content>
+    <content type="text"><![CDATA[今天使用”hexo d”部署文件时发生一个错误，错误信息如下: 123456789On branch masternothing to commit, working tree cleanfatal: protocol error: bad line length character: git@FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19) at ChildProcess.emit (events.js:198:13) at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29) at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12) 调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成known_hosts存放linux的公钥信息，用于安全防范，于是猜想是不是这里出了什么问题，想着反正死猪不怕开水烫，直接把known_hosts文件删除，再次使用”hexo d”成功了。看来问题真出现在这，到这里问题已经解决了，但是原因还是很扑朔迷离，为什么公钥会突然失效呢？ 一顿百度谷歌刀光剑影，准备详细了解了关于known_hosts的信息。了解后发现known_hosts是很安全的，于是又从ssh的角度查看最大访问数之类的设置，一一试验了下，无法再现之前的错误了，既然再现不了就不能证明猜想是否正确。于是开始回忆之前如何出问题，最后发现我敲命令是基于git bash的，但我有的git bash是直接打开的有的是通过Git Extensions软件内置的连接打开的，然道有区别，试了一下。。。真的再现了，Git Extensions上打开的git bash会出现上述错误 调查过程中遇到的一些有用的资料: linux ssh配置文件修复详解 SSH下know_hosts的作用 ssh最大连接数、ssh连接时长、安全性配置等]]></content>
       <categories>
         <category>hexo使用</category>
       </categories>
@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[引言]]></title>
     <url>%2F2019%2F07%2F04%2F%E5%BC%95%E8%A8%80%2F</url>
-    <content type="text"><![CDATA[随着工作的发展，慢慢的也积累了一定的知识。突然想起当初刚进入该行业时就想过弄一个自己的博客，当时尝试后没成功，也就不了了知，这次在日本出差，度过项目的繁忙期，这两天刚好有空，又想起了当初的小目标，怀着学习的心态，尝试着根据网上调查了解，最终选择自己搭建一个hexo的博客系统。万幸，竟然被我尝试成功了，虽然都是运用网上的资料，手把手的跟着搭建，但是还是难掩心中有小小的喜悦。 搭建本博客使用到的技术： 服务端:Nginx+git+nodejs 客户端:git+nodejs+Hexo 有兴趣的朋友可以参考下面资料:基于CentOS搭建Hexo博客非常感谢作者的分享，如果侵权请联系:linwenhan4566@163.com]]></content>
+    <content type="text"><![CDATA[随着工作的发展，慢慢的也积累了一定的知识。突然想起当初刚进入该行业时就想过弄一个自己的博客，当时尝试后没成功，也就不了了知，这次在日本出差，度过项目的繁忙期，这两天刚好有空，又想起了当初的小目标，怀着学习的心态，尝试着根据网上调查了解，最终选择自己搭建一个hexo的博客系统。万幸，竟然被我尝试成功了，虽然都是运用网上的资料，手把手的跟着搭建，但是还是难掩心中有小小的喜悦。 搭建本博客使用到的技术： 服务端:Nginx+git+nodejs 客户端:git+nodejs+Hexo 有兴趣的朋友可以参考下面资料:基于CentOS搭建Hexo博客]]></content>
       <tags>
         <tag>hexo</tag>
         <tag>git</tag>
