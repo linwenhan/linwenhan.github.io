@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="LWH">
 <meta property="og:description" content="今天使用”hexo d”部署文件时发生一个错误，错误信息如下: fatal: protocol error: bad line length character: git@  调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成k">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-05T01:10:11.187Z">
+<meta property="og:updated_time" content="2019-07-05T01:23:13.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo deploy失败">
 <meta name="twitter:description" content="今天使用”hexo d”部署文件时发生一个错误，错误信息如下: fatal: protocol error: bad line length character: git@  调查发现是进行git push时发生错误，没有提交的权限，可是为什么会push出问题，昨天我用的好好的，想了下之前搭建博客时候看到配置git时候加了ssh密钥，于是就往这个方向调查，了解到配置密钥后第一次使用时会自动生成k">
@@ -92,13 +92,18 @@
 <p> 一顿百度谷歌刀光剑影，准备详细了解了关于known_hosts的信息。了解后发现known_hosts是很安全的，于是又从ssh的角度查看最大访问数之类的设置，一一试验了下，无法再现之前的错误了，既然再现不了就不能证明猜想是否正确。于是开始回忆之前如何出问题，最后发现我敲命令是基于git bash的，但我有的git bash是直接打开的有的是通过Git Extensions软件内置的连接打开的，然道有区别，试了一下。。。真的再现了，Git Extensions上打开的git bash会出现上述错误</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">fatal: protocol error: bad line length character: git@</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:198:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)</span></span><br></pre></td></tr></table></figure>
 
-<p><a href="https://idc.wanyunshuju.com/li/257.html" title="linux ssh配置文件修复详解" target="_blank" rel="noopener">https://idc.wanyunshuju.com/li/257.html</a></p>
+<p>调查过程中遇到的一些有用的资料:</p>
+<ol>
+<li><a href="https://idc.wanyunshuju.com/li/257.html" title="linux ssh配置文件修复详解" target="_blank" rel="noopener">linux ssh配置文件修复详解</a></li>
+<li><a href="https://ningandjiao.iteye.com/blog/1517793" title="SSH下know_hosts的作用" target="_blank" rel="noopener">SSH下know_hosts的作用</a></li>
+<li><a href="http://www.zhanghenglei.com/%E5%85%B3%E4%BA%8Essh-%E8%AE%BE%E7%BD%AE%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93%EF%BC%88ssh%E6%9C%80%E5%A4%A7%E8%BF%9E%E6%8E%A5%E6%95%B0%E3%80%81ssh%E8%BF%9E%E6%8E%A5%E6%97%B6%E9%95%BF%E3%80%81/" title="关于ssh 设置的相关总结" target="_blank" rel="noopener">ssh最大连接数、ssh连接时长、安全性配置等</a><br>非常感谢作者的分享，如果侵权请联系:<a href="mailto:linwenhan4566@163.com" target="_blank" rel="noopener">linwenhan4566@163.com</a></li>
+</ol>
 <hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://207.148.102.63/2019/07/04/hexo-deploy失败/" data-id="cjxpeovsr0001e0pz0zlz7uej" class="article-share-link">Share</a>
+      <a data-url="http://207.148.102.63/2019/07/04/hexo-deploy失败/" data-id="cjxpf0koo0001vcpzedev8xye" class="article-share-link">Share</a>
       
       
     </footer>
