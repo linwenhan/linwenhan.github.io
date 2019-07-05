@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[服务器ssh端口修改后，hexo报错]]></title>
+    <url>%2F2019%2F07%2F05%2F%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9%E5%90%8E%EF%BC%8Chexo%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[为了服务器安全，今天把ssh默认端口修改了下，结果引起hexo上传代码失败 1234567891011ssh: connect to host 207.148.102.63 port 22: Connection refusedfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed at ChildProcess.&lt;anonymous&gt; (C:\Users\mbp\hexo\blog\node_modules\hexo-util\lib\spawn.js:52:19) at ChildProcess.emit (events.js:198:13) at ChildProcess.cp.emit (C:\Users\mbp\hexo\blog\node_modules\cross-spawn\lib\enoent.js:40:29) at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[CentOs 修改SSH端口]]></title>
     <url>%2F2019%2F07%2F05%2FCentOs-%E4%BF%AE%E6%94%B9SSH%E7%AB%AF%E5%8F%A3%2F</url>
     <content type="text"><![CDATA[编辑 /etc/ssh/sshd_config 1vi /etc/ssh/sshd_config 查找端口配置代码 1/Port 将#Port 22将#去掉，22改为任意端口，如：Port 66 重启SSH服务 1service sshd restart]]></content>
