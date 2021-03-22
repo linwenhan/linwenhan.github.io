@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[树莓派常用命令]]></title>
+    <url>%2F2021%2F03%2F22%2F%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[编辑文件 1nano fileName]]></content>
+      <categories>
+        <category>树莓派</category>
+        <category>Raspberry</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
+        <tag>Raspberry Pi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo常用命令]]></title>
+    <url>%2F2021%2F03%2F22%2Fhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[创建新文章 1hexo new [layout] &lt;title&gt;]]></content>
+      <categories>
+        <category>hexo使用</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux配置SSH服务实现远程远程访问]]></title>
+    <url>%2F2021%2F03%2F22%2FLinux%E9%85%8D%E7%BD%AESSH%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[树莓派蓝牙相关配置]]></title>
     <url>%2F2021%2F03%2F21%2F%E6%A0%91%E8%8E%93%E6%B4%BE%E8%93%9D%E7%89%99%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[更新系统。 12sudo apt-get updatesudo apt-get upgrade 连接蓝牙命令 1sudo bluetoothctl 123456listscan ondevicespair F4:73:35:0E:0A:B0trust F4:73:35:0E:0A:B0connect F4:73:35:0E:0A:B0]]></content>
@@ -40,7 +75,7 @@
   <entry>
     <title><![CDATA[探索树莓派]]></title>
     <url>%2F2021%2F03%2F21%2F%E6%8E%A2%E7%B4%A2%E6%A0%91%E8%8E%93%E6%B4%BE%2F</url>
-    <content type="text"><![CDATA[购买清单树莓派组装​ 风扇接线 树莓派连接蓝牙键盘树莓派CSI相机使用]]></content>
+    <content type="text"><![CDATA[购买清单树莓派组装​ 风扇接线 树莓派连接蓝牙键盘树莓派CSI相机使用远程连接https://zhuanlan.zhihu.com/p/98080664 树莓派常用命令]]></content>
       <categories>
         <category>树莓派</category>
         <category>Raspberry Pi</category>
